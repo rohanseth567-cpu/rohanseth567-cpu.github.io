@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rohan Seth — Independent Game Developer</title>
+<meta name="description" content="Rohan Seth is an independent game developer building Android puzzle games in Unity. Published titles: Aqua Flow and Number Merge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1F2A;
+    --ground:#EFF3F2;
+    --paper:#F8FBFA;
+    --water:#1B8496;
+    --water-deep:#10646F;
+    --water-light:#6FC6D0;
+    --slate:#55707B;
+    --line:#D3DEDD;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  a{color:var(--water-deep)}
+  a:focus-visible{outline:2px solid var(--water);outline-offset:3px}
+
+  /* ---------- header ---------- */
+  header{padding:72px 0 8px}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--water-deep);margin:0 0 18px;
+  }
+  h1{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;
+    font-weight:700;font-size:clamp(2.6rem,9vw,4.4rem);
+    line-height:.98;letter-spacing:-.03em;margin:0 0 20px;
+  }
+  .lede{font-size:1.125rem;color:var(--slate);max-width:46ch;margin:0}
+
+  /* ---------- signature: the flow strip ---------- */
+  .flow{margin:44px 0 0;overflow:hidden}
+  .flow svg{width:100%;height:auto;display:block}
+  .pipe{fill:none;stroke:var(--line);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+  .water{
+    fill:none;stroke:var(--water);stroke-width:9;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:1000;stroke-dashoffset:1000;
+    animation:fill 2.4s cubic-bezier(.35,.6,.25,1) .25s forwards;
+  }
+  .joint{fill:var(--ground);stroke:var(--line);stroke-width:2}
+  @keyframes fill{to{stroke-dashoffset:0}}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0 0}
+  h2{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--slate);margin:0 0 22px;display:flex;align-items:center;gap:10px;
+  }
+  h2::before{content:"";width:7px;height:7px;background:var(--water);flex:none}
+
+  .games{display:grid;gap:14px}
+  .game{
+    background:var(--paper);border:1px solid var(--line);
+    border-left:3px solid var(--water-light);
+    padding:20px 22px;text-decoration:none;color:inherit;display:block;
+    transition:border-left-color .18s ease,transform .18s ease;
+  }
+  .game:hover,.game:focus-visible{border-left-color:var(--water);transform:translateX(3px)}
+  .game h3{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-.01em;margin:0 0 4px;
+  }
+  .game p{margin:0 0 12px;color:var(--slate);font-size:.95rem}
+  .pkg{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--water-deep)}
+
+  ul.links{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.links li{font-size:.98rem}
+
+  .contact{display:grid;gap:6px}
+  .contact div{font-size:1.05rem}
+
+  /* ---------- footer: the block Meta reads ---------- */
+  footer{margin-top:72px;border-top:1px solid var(--line);padding:32px 0 64px}
+  .biz{
+    font-family:"IBM Plex Mono",monospace;font-size:.82rem;
+    color:var(--slate);line-height:1.9;
+  }
+  .biz strong{color:var(--ink);font-weight:500}
+
+  @media (prefers-reduced-motion:reduce){
+    .water{animation:none;stroke-dashoffset:0}
+    .game{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Independent game developer</p>
+    <h1>Rohan Seth</h1>
+    <p class="lede">I build Android puzzle games on my own — design, code, art and release — in Unity.</p>
+
+    <!-- Signature element: water routing through a pipe run, the core mechanic of Aqua Flow -->
+    <div class="flow" aria-hidden="true">
+      <svg viewBox="0 0 600 90" role="presentation">
+        <path class="pipe" d="M8 68 H118 Q138 68 138 48 V38 Q138 22 158 22 H300 Q320 22 320 42 V52 Q320 68 340 68 H468 Q488 68 488 48 V28 Q488 20 500 20 H592"/>
+        <path class="water" d="M8 68 H118 Q138 68 138 48 V38 Q138 22 158 22 H300 Q320 22 320 42 V52 Q320 68 340 68 H468 Q488 68 488 48 V28 Q488 20 500 20 H592"/>
+        <rect class="joint" x="132" y="42" width="12" height="12"/>
+        <rect class="joint" x="314" y="36" width="12" height="12"/>
+        <rect class="joint" x="482" y="42" width="12" height="12"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Games on Google Play</h2>
+      <div class="games">
+        <a class="game" href="https://play.google.com/store/apps/details?id=com.rohanseth.aquaflow">
+          <h3>Aqua Flow</h3>
+          <p>Tap to rotate pipes and route water to every pot. Twelve thousand levels across thirty worlds.</p>
+          <span class="pkg">com.rohanseth.aquaflow</span>
+        </a>
+        <a class="game" href="https://play.google.com/store/apps/details?id=com.rohanseth.merge2048">
+          <h3>Number Merge</h3>
+          <p>Slide and merge matching tiles to build bigger numbers. A 2048-style puzzle.</p>
+          <span class="pkg">com.rohanseth.merge2048</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Policies</h2>
+      <ul class="links">
+        <li><a href="/aqua-flow-privacy/">Aqua Flow — privacy policy</a></li>
+        <li><a href="/number-merge-privacy/">Number Merge — privacy policy</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <div class="contact">
+        <div>Questions, bugs or account deletion requests: <a href="mailto:rohanseth567@gmail.com">rohanseth567@gmail.com</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="biz">
+      <strong>Rohan Seth</strong> — Independent game developer<br>
+      Email: rohanseth567@gmail.com<br>
+      <!-- Delete the next line if you'd rather not publish the number. Keep it if Meta is matching your contact details. -->
+      Phone: +91 98734 07300<br>
+      <!-- Optional: add the city/address exactly as you entered it in Meta, e.g. "New Delhi, India" -->
+      India
+    </div>
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Rohan Seth",
+  "description":"Independent game developer building Android puzzle games.",
+  "url":"https://rohanseth567-cpu.github.io/",
+  "email":"rohanseth567@gmail.com",
+  "telephone":"+91-98734-07300",
+  "address":{"@type":"PostalAddress","addressCountry":"IN"}
+}
+</script>
+
+</body>
+</html>
